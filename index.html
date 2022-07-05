@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <title>Clothing Store</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        @font-face
+        {
+            font-family: 'poppins';
+            src: url('./assets/fonts/poppins.ttf');
+        }
+
+        @font-face
+        {
+            font-family: 'mont';
+            src: url('./assets/fonts/Montserrat.ttf');
+        }
+
+        @font-face
+        {
+            font-family: 'mont600';
+            src: url('./assets/fonts/Montserrat-SemiBold.ttf');
+            font-weight: 600;
+        }
+
+        .brand{
+            font-family: 'mont600';
+            font-size: 28px;
+        }
+
+        .nav-menus{
+            font-family: 'poppins';
+            font-weight: 600;
+            color: #000 !important;
+        }
+
+        .nav-home{
+            font-family: 'poppins';
+            font-weight: 600;
+            color: #F99CB3 !important;
+        }
+
+        .navbar-nav{
+            justify-content: space-around;
+            width: 55%;
+        }
+        
+
+        .dot {
+            height: 17px;
+            width: 17px;
+            background-color: #E3931B;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .page{
+            height: 100%;
+        }
+
+        .page-1{
+            padding: 70px 100px;
+        }
+
+        .page-1 .text{
+            width: 40%;
+            font-family: 'poppins';
+            color: #000;
+        }
+
+        .page-1 .text h3{
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        .page-1 .text p{
+            font-size: 25px;
+            padding-top: 10px;
+        }
+
+        .page-1 .text .order{
+            width: 200px;
+            height: 55px;
+            background: rgba(239, 95, 129, 0.64);
+            border-radius: 0px 20px 20px 0px;
+            font-weight: 400;
+        }
+
+        .page-1 .text .order:hover{
+            background: rgba(239, 95, 129, 1);
+            cursor: pointer;
+        }
+
+        .page-1 .images{
+            width: 50%;
+        }
+
+        .page-2{
+            padding: 60px;
+        }
+
+        .page-2 .title{
+            font-family: 'poppins';
+            font-weight: 600;
+        }
+
+        .page-2 .categories img{
+            height: auto;
+            width: 100%;
+        }
+
+        .page-2 .categories .category{
+            width: 23%;
+        }
+
+        .page-3{
+            padding: 60px;
+        }
+
+        .page-3 .title{
+            font-family: 'poppins';
+            font-weight: 600;
+        }
+
+        .page-3 .products .product{
+            height: 300px;
+            background: #FDFAFA;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 23%;
+        }
+
+        .page-3 .products .row2{
+            
+        }
+
+        .page-3 .products .product img{
+            height: 230px;
+        }
+
+        .desc{
+            font-family: 'poppins';
+            padding-top: 10px;
+        }
+
+        .desc p{
+            margin: 0;
+            padding: 0;
+        }
+
+        .desc .price{
+            color: rgba(239, 95, 129, 0.64);
+        }
+
+        .page-4{
+            padding: 60px;
+        }
+
+        .page-4 .images{
+            width: 40%;
+        }
+
+        .page-4 .images img{
+            
+        }
+
+        .page-4 .text{
+            width: 50%;
+        }
+        
+        .page-4 .text .desc p{
+            font-size: 36px;
+        }
+
+        a.read{
+            background: #F99CB3;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            width: 200px;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            color: #000;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .page-5{
+            background-color: #E5E5E5;
+            height: 400px;
+            padding: 60px;
+        }
+
+        .logos img{
+            width: 60px;
+            height: 60px;
+        }
+
+        p.address{
+            font-family: 'poppins';
+            font-size: 20px;
+            color: #00154A;
+        }
+
+        div.address{
+            text-align: right;
+        }
+
+        div.address .reguler{
+            color: #A0A0A0;
+        }
+
+        footer{
+            background: #00154A;
+        }
+
+        footer p{
+            margin: 0;
+            padding: 10px 0;
+            color: wheat;
+            text-align: center;
+            font-family: 'poppins';
+            font-weight: 400;
+        }
+
+        footer a{
+            color: #E3931B;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .page-1{
+                padding: 20px;
+                flex-direction: column; 
+            }
+
+            .page-1 .text,.images{
+                width: 100%;
+            }
+
+            .page-1 .images{
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .page-2{
+                padding: 20px;               
+                margin-bottom: 20px;
+            }
+
+            .page-2 .categories{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .page-2 .categories .category{
+                width: 100%;
+            }
+
+            .page-2 .categories img{
+                height: auto;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .page-3{
+                padding: 20px;
+            }
+
+            .page-3 .products{
+                flex-direction: column;
+            }
+
+            .page-3 .products .product{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .page-3 .products .row2{
+                margin-top: 70px;
+            }
+
+            .page-3 .products .product img{
+                height: 230px;
+            }
+
+            .desc{
+                font-family: 'poppins';
+                padding-top: 10px;
+            }
+
+            .desc p{
+                margin: 0;
+                padding: 0;
+            }
+
+            .desc .price{
+                color: rgba(239, 95, 129, 0.64);
+            }
+
+            .page-4{
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .page-4 .images{
+                width: 100%;
+            }
+
+            .page-4 .images img{
+                width: 100%;
+            }
+
+            .page-4 .text{
+                width: 100%;
+            }
+            
+            .page-4 .text .desc p{
+                font-size: 36px;
+            }
+
+            a.read{
+                width: 100%;
+            }
+
+            .page-5{
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .logos img{
+                width: 60px;
+                height: 60px;
+            }
+
+            p.address{
+                font-family: 'poppins';
+                font-size: 20px;
+                color: #00154A;
+            }
+
+            div.address{
+                text-align: left;
+            }
+
+            div.address .reguler{
+                color: #A0A0A0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Start Nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand brand" href="#">CLOTHING STORE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-md-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link nav-home" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#">Sign In</a>
+                    </li>
+                    <li class="nav-item mt-2">
+                        <span class="dot"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Nav -->
+
+        <!-- Start Page 1 -->
+        <div id="home" class="page page-1 w-100 d-flex justify-content-between">
+            <div class="text d-flex justify-content-center flex-column">
+                <h3>
+                    It's Your World Fashion
+                </h3>
+                <p>
+                    There is no day without style
+                </p>
+                <a href="detail.html" style="text-decoration: none;color: black;" class="order d-flex align-items-center justify-content-center">
+                    Order Your Clothes
+                </a>
+            </div>
+            <div class="images">
+                <img class="w-100" src="./assets/images/image1.png" alt="" srcset="">
+            </div>
+        </div>
+        <!-- End Page 1 -->
+
+        <!-- Start Page 2 -->
+        <div id="categories" class="page page-2">
+            <p class="title">
+                Trend Categories
+            </p>
+
+            <div class="categories pt-5 d-flex justify-content-between">
+                <div class="category category-1">
+                    <img src="./assets/images/categories1.png" alt="">
+                </div>
+                <div class="category category-2">
+                    <img src="./assets/images/categories2.png" alt="">
+                </div>
+                <div class="category category-3">
+                    <img src="./assets/images/categories3.png" alt="">
+                </div>
+                <div class="category category-4">
+                    <img src="./assets/images/categories4.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- End Page 2 -->
+
+        <!-- Start Page 3 -->
+        <div id="products" class="page page-3">
+            <p class="title">
+                Popular Products
+            </p>
+        
+            <div class="products pt-5 d-flex justify-content-around flex-wrap">
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product6.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Long Dress
+                        </p>
+                        <p class="price text-center">
+                            Rp 250.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product9.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Tunik
+                        </p>
+                        <p class="price text-center">
+                            Rp 220.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product8.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Blouse
+                        </p>
+                        <p class="price text-center">
+                            Rp 110.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product5.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Blouse
+                        </p>
+                        <p class="price text-center">
+                            Rp 150.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product4.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Skirt
+                        </p>
+                        <p class="price text-center">
+                            Rp 110.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product3.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Skirt
+                        </p>
+                        <p class="price text-center">
+                            Rp 160.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product2.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Jeans
+                        </p>
+                        <p class="price text-center">
+                            Rp 180.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product1.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Kulot
+                        </p>
+                        <p class="price text-center">
+                            Rp 110.000
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <!-- End Page 3 -->
+
+        <div class="page page-4 d-flex justify-content-around align-items-center">
+            <div class="images">
+                <img src="./assets/images/bottom1.png" alt="">
+            </div>
+            <div class="text d-flex flex-column">
+                <div class="star">
+                    <img src="./assets/images/star.png" alt="">
+                </div>
+                <div class="desc d-flex flex-column">
+                    <p>
+                        CLOTHING STORE
+                    </p>
+                    <p style="font-size: 30px;">
+                        “CHANGE YOUR APPEARANCE INTO COOL”....
+                    </p>
+
+                    <a class="read">
+                        Read Story
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page page-5 d-flex justify-content-around align-items-center">
+            <div class="socials d-flex flex-column">
+                <div class="title">
+                    <h3>CLOTHING STORE</h3>
+                </div>
+                <div class="logos d-flex justify-content-around">
+                    <img src="./assets/images/ig.png" alt="">
+                    <img src="./assets/images/fb.png" alt="">
+                    <img src="./assets/images/yt.png" alt="">
+                </div>
+            </div>
+
+            <div class="address">
+                <p class="address">
+                    Address
+                </p>
+                <p class="reguler">
+                    Jl. Karya 1,
+                </p>
+                <p class="reguler">
+                    Kecamatan Marpoyan Damai, Pekanbaru, Riau 28282
+                </p>
+                <p class="reguler">
+                    0812-6865-3354
+                </p>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>
+                2020 Copyright <a href="index.html">Clothing Store.</a> All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+</body>
+</html>

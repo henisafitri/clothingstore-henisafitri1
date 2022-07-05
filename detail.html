@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <title>Clothing Store</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: 'poppins';
+        }
+
+        @font-face {
+            font-family: 'poppins';
+            src: url('./assets/fonts/poppins.ttf');
+        }
+
+        @font-face {
+            font-family: 'mont';
+            src: url('./assets/fonts/Montserrat.ttf');
+        }
+
+        @font-face {
+            font-family: 'mont600';
+            src: url('./assets/fonts/Montserrat-SemiBold.ttf');
+            font-weight: 600;
+        }
+
+        p,h1,h2,h3,h4,h5{
+            margin: 0;
+        }
+
+        .brand {
+            font-family: 'mont600';
+            font-size: 28px;
+        }
+
+        .nav-menus {
+            font-family: 'poppins';
+            font-weight: 600;
+            color: #000 !important;
+        }
+
+        .nav-home {
+            font-family: 'poppins';
+            font-weight: 600;
+            color: #F99CB3 !important;
+        }
+
+        .navbar-nav {
+            justify-content: space-around;
+            width: 55%;
+        }
+
+        .navbar{
+           padding: 0.5rem 2rem; 
+        }
+
+        .breadcrumb{
+            background-color: white;
+            font-family: 'poppins';
+            padding: 2rem;
+        }
+
+        .breadcrumb a{
+            color: #000;
+            width: 4%;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .dot {
+            height: 17px;
+            width: 17px;
+            background-color: #E3931B;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .page {
+            height: 100%;
+        }
+
+        .page-1 {
+            padding: 2rem;
+        }
+        
+        .page-1 .images{
+            width: 65%;
+        }
+
+        .page-1 .images img{
+            width: 100%;
+            height: auto;
+        }
+
+        .page-1 .side{
+            width: 25%;            
+            flex-direction: column;
+        }
+
+        .page-1 .side img{
+            width: 100%;
+        }
+
+        .page-2 {
+            padding: 2rem;
+        }
+        
+        .page-2 .about{
+            width: 65%;
+        }
+
+        .page-2 .about h3{
+            font-weight: bold;
+        }
+
+        .page-2 .about p{
+            color: #C4C4C4;
+        }
+
+        .page-2 .booking{
+            width: 25%;
+            background: #FDFAFA;
+            border: 1px solid #C4C4C4;
+            border-radius: 0px;
+        }
+
+        .page-2 .booking .content .price{
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 60px;
+            color: #F99CB3;
+        }  
+        
+        .page-2 .booking .content .continue{
+            background: #568EE2;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        .page-2 .booking .content .continue:hover{
+            cursor: pointer;
+        } 
+
+        .img-border{
+            border: 2px solid rgba(239, 95, 129, 0.64);
+            border-radius: 20px;
+        }
+
+        .page-3 {
+            padding: 2rem;
+        }
+
+        .page-3 .title {
+            font-family: 'poppins';
+            font-weight: 600;
+        }
+
+        .page-3 .products .product {
+            height: 300px;
+            background: #FDFAFA;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 23%;
+        }
+
+        .page-3 .products .row2 {}
+
+        .page-3 .products .product img {
+            height: 230px;
+        }
+
+        .desc {
+            font-family: 'poppins';
+            padding-top: 10px;
+        }
+
+        .desc p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .desc .price {
+            color: rgba(239, 95, 129, 0.64);
+        }
+
+        .page-4 {
+            padding: 1rem;
+        }
+
+        .page-4 .images {
+            width: 40%;
+        }
+
+        .page-4 .images img {}
+
+        .page-4 .text {
+            width: 50%;
+        }
+
+        .page-4 .text .desc p {
+            font-size: 36px;
+        }
+
+        a.read {
+            background: #F99CB3;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            width: 200px;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            color: #000;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .page-5 {
+            background-color: #E5E5E5;
+            height: 400px;
+            padding: 2rem;
+        }
+
+        .logos img {
+            width: 60px;
+            height: 60px;
+        }
+
+        p.address {
+            font-family: 'poppins';
+            font-size: 20px;
+            color: #00154A;
+        }
+
+        div.address {
+            text-align: right;
+        }
+
+        div.address .reguler {
+            color: #A0A0A0;
+        }
+
+        footer {
+            background: #00154A;
+        }
+
+        footer p {
+            margin: 0;
+            padding: 10px 0;
+            color: wheat;
+            text-align: center;
+            font-family: 'poppins';
+            font-weight: 400;
+        }
+
+        footer a {
+            color: #E3931B;
+        }
+
+        select {
+        /* styling */
+        background-color: #E5E5E5;
+        border-radius: 4px;
+        display: inline-block;
+        font: inherit;
+        line-height: 1.5em;
+        padding: 0.5em 3.5em 0.5em 1em;
+
+        /* reset */
+
+        margin: 0;      
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        }
+
+
+        /* arrows */
+
+        select.classic {
+            width: 100%;
+        background-image:
+            linear-gradient(45deg, transparent 50%, white 50%),
+            linear-gradient(135deg, white 50%, transparent 50%),
+            linear-gradient(to right, rgba(239, 95, 129, 0.64), rgba(239, 95, 129, 0.64));
+        background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            100% 0;
+        background-size:
+            5px 5px,
+            5px 5px,
+            2.5em 2.5em;
+        background-repeat: no-repeat;
+        }
+
+        select.classic:focus {
+        background-image:
+            linear-gradient(45deg, white 50%, transparent 50%),
+            linear-gradient(135deg, transparent 50%, white 50%),
+            linear-gradient(to right, gray, gray);
+        background-position:
+            calc(100% - 15px) 1em,
+            calc(100% - 20px) 1em,
+            100% 0;
+        background-size:
+            5px 5px,
+            5px 5px,
+            2.5em 2.5em;
+        background-repeat: no-repeat;
+        border-color: grey;
+        outline: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar{
+                padding: 0.5rem 1rem; 
+            }
+            .breadcrumb a{
+                color: #000;
+                width: 20%;
+                white-space: nowrap;
+                text-align: center;
+            }
+
+            .page-1 {
+                padding: 2rem;
+                flex-direction: column;
+            }
+            
+            .page-1 .images{
+                width: 100%;
+                height: 65%;
+            }
+
+            .page-1 .images img{
+                width: 100%;
+                height: auto;
+            }
+
+            .page-1 .side{
+                width: 100%;
+                height: 25%;
+                flex-direction: row;
+                justify-content: space-around !important;
+            }
+
+            .page-1 .side img{
+                width: 40%;
+            }
+
+            .page-2 {
+                padding: 2rem;
+                flex-direction: column;
+            }
+            
+            .page-2 .about{
+                width: 100%;
+                margin-bottom: 2em;
+            }
+
+            .page-2 .about h3{
+                font-weight: bold;
+            }
+
+            .page-2 .about p{
+                color: #C4C4C4;
+            }
+
+            .page-2 .booking{
+                width: 100%;
+                background: #FDFAFA;
+                border: 1px solid #C4C4C4;
+                border-radius: 0px;
+            }
+
+            .page-2 .booking .content .price{
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 60px;
+                color: #F99CB3;
+            }  
+            
+            .page-2 .booking .content .continue{
+                background: #568EE2;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            .page-3 {
+                padding: 20px;
+            }
+
+            .page-3 .products {
+                flex-direction: column;
+            }
+
+            .page-3 .products .product {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .page-3 .products .row2 {
+                margin-top: 70px;
+            }
+
+            .page-3 .products .product img {
+                height: 230px;
+            }
+
+            .desc {
+                font-family: 'poppins';
+                padding-top: 10px;
+            }
+
+            .desc p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .desc .price {
+                color: rgba(239, 95, 129, 0.64);
+            }
+
+            .page-4 {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .page-4 .images {
+                width: 100%;
+            }
+
+            .page-4 .images img {
+                width: 100%;
+            }
+
+            .page-4 .text {
+                width: 100%;
+            }
+
+            .page-4 .text .desc p {
+                font-size: 36px;
+            }
+
+            a.read {
+                width: 100%;
+            }
+
+            .page-5 {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .logos img {
+                width: 60px;
+                height: 60px;
+            }
+
+            p.address {
+                font-family: 'poppins';
+                font-size: 20px;
+                color: #00154A;
+            }
+
+            div.address {
+                text-align: left;
+            }
+
+            div.address .reguler {
+                color: #A0A0A0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Start Nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand brand" href="#">CLOTHING STORE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-md-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link nav-home" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="index.html#categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menus" href="#">Sign In</a>
+                    </li>
+                    <li class="nav-item mt-2">
+                        <span class="dot"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Nav -->
+
+        <div class="breadcrumb d-flex">
+            <a href="index.html" style="color: #C4C4C4">Home</a>
+            <a>/</a>
+            <a href="/">Product Details</a>
+        </div>
+
+        <!-- Start Page 1 -->
+        <div id="home" class="page page-1 w-100 d-flex justify-content-between">
+            <div class="images">
+                <img src="./assets/images/detail1.png" alt="">
+            </div>
+            <div class="side d-flex mt-sm-2 justify-content-between">
+                <img src="./assets/images/detail1.png" alt="" srcset="">
+                <img class="img-border" src="./assets/images/detail1.png" alt="" srcset="">
+            </div>
+        </div>
+        <!-- End Page 1 -->
+
+        <!-- Start Page 2 -->
+        <div class="page page-2 d-flex justify-content-between">
+            <div class="about">
+                <h3>About the clothes</h3>
+                <p>
+                    Casual or casual clothing is clothing worn at leisure or recreation. There are many types of casual clothing, this is
+                    adapted to the place where we do these leisure or recreational activities. This casual dress emphasizes comfort and
+                    personal expression over the presentation and uniformity of one's dress, which includes jeans, t-shirts, etc. <br>
+                    
+                    There are several things to consider when choosing casual clothes, including:<br><br>
+                    
+                    a). Choose a practical design and adjust it to a place to relax. If you are relaxed at home, choose a model that is a
+                    bit loose, if you are relaxing on the beach, choose a neck model that is slightly open so it is not hot, if you are
+                    relaxed in the mountains, choose a model that is slightly closed so that cold air can be overcome.<br><br>
+                    
+                    b) Choose a material that is strong and absorbs sweat.<br><br>
+                    
+                    c). DevelopmentFashion<br><br>
+                    
+                    Along with the advancement of science and technology, fashion fashion is also growing rapidly, although sometimes the
+                    fashion is not in accordance with good dress procedures, but fashion continues to roll from time to time.
+                </p>
+            </div>
+            <div class="booking">
+                <div class="content p-5 d-flex flex-column">
+                    <p class="title font-weight-bold">Booking Clothes</p>
+                    <p class="price font-weight-bold">Rp 150.000</p>
+                    <p class="mb-2">Color</p>
+                    <div class="select mb-2">
+                        <select class="classic">
+                            <option value="Option 1">Option 1</option>
+                            <option value="Option 2">Option 2</option>
+                            <option value="Option 3">Option 3</option>
+                            <option value="Option 4">Option 4</option>
+                            <option value="Option 5">Option 5</option>
+                            <option value="Option length">
+                                Option that has too long of a value to fit
+                            </option>
+                        </select>
+                    </div>
+                    <p class="mb-2">Size</p>
+                    <div class="select mb-5">
+                        <select class="classic">
+                            <option value="Option 1">Option 1</option>
+                            <option value="Option 2">Option 2</option>
+                            <option value="Option 3">Option 3</option>
+                            <option value="Option 4">Option 4</option>
+                            <option value="Option 5">Option 5</option>
+                            <option value="Option length">
+                                Option that has too long of a value to fit
+                            </option>
+                        </select>
+                    </div>
+                    <a href="booking_satu.html" class="continue">
+                        <p class="text-white p-2 text-center">Continue To Book</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Page 2 -->
+
+        <!-- Start Page 3 -->
+        <div id="products" class="page page-3">
+            <p class="title">
+                Popular Products
+            </p>
+
+            <div class="products pt-5 d-flex justify-content-around flex-wrap">
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product6.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Long Dress
+                        </p>
+                        <p class="price text-center">
+                            Rp 250.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product9.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Tunik
+                        </p>
+                        <p class="price text-center">
+                            Rp 220.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product8.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Blouse
+                        </p>
+                        <p class="price text-center">
+                            Rp 110.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product mb-3 d-flex flex-column">
+                    <img src="./assets/images/product5.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Blouse
+                        </p>
+                        <p class="price text-center">
+                            Rp 150.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product4.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Skirt
+                        </p>
+                        <p class="price text-center">
+                            Rp 110.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product3.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Skirt
+                        </p>
+                        <p class="price text-center">
+                            Rp 160.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product2.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Jeans
+                        </p>
+                        <p class="price text-center">
+                            Rp 180.000
+                        </p>
+                    </div>
+                </div>
+                <div class="product d-flex flex-column">
+                    <img src="./assets/images/product1.png" alt="" srcset="">
+                    <div class="desc">
+                        <p class="name text-center">
+                            Kulot
+                        </p>
+                        <p class="price text-center">
+                            Rp 110.000
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Page 3 -->
+
+        <div class="page page-4 d-flex justify-content-around align-items-center">
+            <div class="images">
+                <img src="./assets/images/detail-bottom1.png" alt="">
+            </div>
+            <div class="text d-flex flex-column">
+                <div class="star">
+                    <img src="./assets/images/star.png" alt="">
+                </div>
+                <div class="desc d-flex flex-column">
+                    <p>
+                        CLOTHING STORE
+                    </p>
+                    <p style="font-size: 30px;">
+                        “CHANGE YOUR APPEARANCE INTO COOL”....
+                    </p>
+
+                    <a class="read">
+                        Read Story
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page page-5 d-flex justify-content-around align-items-center">
+            <div class="socials d-flex flex-column">
+                <div class="title">
+                    <h3>CLOTHING STORE</h3>
+                </div>
+                <div class="logos d-flex justify-content-around">
+                    <img src="./assets/images/ig.png" alt="">
+                    <img src="./assets/images/fb.png" alt="">
+                    <img src="./assets/images/yt.png" alt="">
+                </div>
+            </div>
+
+            <div class="address">
+                <p class="address">
+                    Address
+                </p>
+                <p class="reguler">
+                    Jl. Karya 1,
+                </p>
+                <p class="reguler">
+                    Kecamatan Marpoyan Damai, Pekanbaru, Riau 28282
+                </p>
+                <p class="reguler">
+                    0812-6865-3354
+                </p>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>
+                2020 Copyright <a href="index.html">Clothing Store.</a> All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
